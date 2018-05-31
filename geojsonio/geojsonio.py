@@ -8,11 +8,28 @@ import sys
 import webbrowser
 
 import github3
+from github3 import login
+from github3 import create_gist
+
 import six
 from six.moves import urllib
 
 MAX_URL_LEN = 150e3  # Size threshold above which a gist is created
 DEFAULT_DOMAIN = 'http://geojson.io/'
+
+def auth (guser, gpass):
+    """
+    auth variables
+    """
+    global gituser
+    gituser = guser
+    global gitpass
+    gitpass = gpass
+
+def testauth():
+    gh = login( gituser, password= gitpass)
+    testme = gh.me()
+    print (testme.name)
 
 
 def display(contents, domain=DEFAULT_DOMAIN, force_gist=False):
@@ -58,7 +75,6 @@ def embed(contents='', width='100%', height=512, *args, **kwargs):
     html = '<iframe src={url} width={width} height={height}></iframe>'.format(
         url=url, width=width, height=height)
     return HTML(html)
-
 
 def make_url(contents, domain=DEFAULT_DOMAIN, force_gist=False,
              size_for_gist=MAX_URL_LEN):
@@ -167,7 +183,7 @@ def _make_gist(contents, description='', filename='data.geojson'):
     contents
 
     """
-    ghapi = github3.GitHub()
+    ghapi = login(gituser, gitpass)
     files = {filename: {'content': contents}}
     gist = ghapi.create_gist(description, files)
 
