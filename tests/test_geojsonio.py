@@ -117,11 +117,7 @@ def test_gist_url():
 def test_factory_data(features):
     contents = json.dumps(features)
     size = len(contents)
-    global gituser
-    global gitpass
-    gituser = "gitUsername"
-    gitpass = "gitPassword"
-
+    
     url = geojsonio.make_url(contents, size_for_gist=size+1)
     assert url == geojsonio.data_url(contents)
 
@@ -129,6 +125,10 @@ def test_factory_data(features):
 def test_factory_gist(features):
     contents = json.dumps(features)
     size = len(contents)
+    global gituser
+    global gitpass
+    gituser = "gitUsername"
+    gitpass = "gitPassword"
 
     with mock.patch.object(github3.GitHub, 'create_gist') as MockInstance:
         class Dummy(object):
