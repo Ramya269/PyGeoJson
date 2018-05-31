@@ -9,10 +9,37 @@ Open GeoJSON data on `geojson.io <http://geojson.io>`_ from Python.
 .. image:: https://travis-ci.org/jwass/geojsonio.py.svg?branch=master
     :target: https://travis-ci.org/jwass/geojsonio.py
 
-Usage
+Basic and requirements
 -----
+You must have github3.py
+(http://github3py.readthedocs.io)
+and import geojsonio
+
+.. code-block:: python
+
+    import geojsonio
+
+Auth
+_____
+
+You need to auth to the GitApi in order to create gists:
+use:
+
+.. code-block:: python
+
+    geojsonio.auth('YOUR-GIT-USERNAME', '<GITPASSWORD>')
+
+You can test the authentication with:
+
+.. code-block:: python
+
+    geojsonio.testauth()
+
 
 Send data to geojson.io and open a browser within python
+
+Usage
+_____
 
 .. code-block:: python
 
