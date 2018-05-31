@@ -186,6 +186,7 @@ def _make_gist(contents, description='', filename='data.geojson'):
     ghapi = login(gituser, gitpass)
     files = {filename: {'content': contents}}
     gist = ghapi.create_gist(description, files)
+    print (gist.html_url)
 
     return gist
 

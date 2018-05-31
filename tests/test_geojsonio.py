@@ -5,6 +5,8 @@ from six.moves import urllib
 
 import geojsonio
 import github3
+from github3 import login
+from github3 import create_gist
 
 import mock
 import pytest
@@ -115,6 +117,10 @@ def test_gist_url():
 def test_factory_data(features):
     contents = json.dumps(features)
     size = len(contents)
+    global gituser
+    global gitpass
+    gituser = "gitUsername"
+    gitpass = "gitPassword"
 
     url = geojsonio.make_url(contents, size_for_gist=size+1)
     assert url == geojsonio.data_url(contents)
