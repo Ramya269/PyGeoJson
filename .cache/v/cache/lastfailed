@@ -1,4 +1,1 @@
-{
-  "tests/test_geojsonio.py::test_factory_force_gist": true,
-  "tests/test_geojsonio.py::test_factory_gist": true
-}
+{}
