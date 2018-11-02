@@ -22,12 +22,9 @@ def auth (guser, gpass):
     return gh
 
 def testauth(auth):
-    gh = login( gituser, password= gitpass)
-    testme = gh.me()
-    print (testme.name)
+    return auth.me()
 
-
-def display(contents, domain=DEFAULT_DOMAIN, force_gist=False):
+def display(contents, domain=DEFAULT_DOMAIN, force_gist=True):
     """
     Open a web browser pointing to geojson.io with the specified content.
 
@@ -178,11 +175,11 @@ def _make_gist(contents, description='', filename='data.geojson'):
     contents
 
     """
-    auth("myGitUser","myGitPass");
+
     #ghapi = login(gituser, gitpass)
     files = {filename: {'content': contents}}
     gist = create_gist(description, files)
-    #print (gist.html_url)
+    print (gist.html_url)
 
     return gist
 
