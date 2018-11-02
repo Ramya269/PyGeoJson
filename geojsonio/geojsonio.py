@@ -22,9 +22,7 @@ def auth (guser, gpass):
     return gh
 
 def testauth(auth):
-    gh = login( gituser, password= gitpass)
-    testme = gh.me()
-    print (testme.name)
+    auth.me()
 
 
 def display(contents, domain=DEFAULT_DOMAIN, force_gist=False):
