@@ -2,7 +2,7 @@ from __future__ import absolute_import
 
 from .geojsonio import (
     main,
-    auth,
+    authToGit,
     testauth,
     to_geojsonio,
     display,

@@ -45,11 +45,11 @@ _____
 .. code-block:: python
 
     from geojsonio import display
-    
+
     with open('map.geojson') as f:
         contents = f.read()
         display(contents)
-        
+
 Data
 ----
 There are two methods by which ``geojsonio.py`` gets geojson.io to render the data:
@@ -61,7 +61,7 @@ There are two methods by which ``geojsonio.py`` gets geojson.io to render the da
 If the contents are small enough, they will be embedded in the URL. Otherwise ``geojsonio.py`` creates an anonymous
 Gist on Github with the GeoJSON contents. Note: when an anonymous gist is created, the data is uploaded to Github
 and a unique gist ID is created. If anyone else is able to obtain the gist ID, they will be able to see your data.
-    
+
 Goes Great With GeoPandas
 -------------------------
 ``geojsonio.py`` integrates nicely with `GeoPandas <https://github.com/geopandas/geopandas>`_ to
@@ -74,7 +74,7 @@ property called ``'Name'``. Quickly display all the states whose names start wit
 
     import geopandas as gpd
     import geojsonio
-    
+
     states = gpd.read_file('states.geojson')
     m_states = states[states['Name'].str.startswith('M')]
     geojsonio.display(m_states.to_json())
@@ -83,7 +83,7 @@ This will open a browser to the geojson.io window with the polygons drawn on the
 
 IPython Notebook Integration
 ----------------------------
-    
+
 To easily embed geojson.io in an iframe in a Jupyter/IPython notebook, use
 the ``embed()`` method
 
@@ -115,5 +115,3 @@ Install with ``pip``
 ::
 
     $ pip install geojsonio
-
-

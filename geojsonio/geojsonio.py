@@ -14,11 +14,16 @@ from github3 import create_gist
 import six
 from six.moves import urllib
 
+getCredentials = open('gitauth.txt').read().split("\n")
+
+GITUSER = getCredentials[0]
+GITPASS = getCredentials[1]
+
 MAX_URL_LEN = 150e3  # Size threshold above which a gist is created
 DEFAULT_DOMAIN = 'http://geojson.io/'
 
-def auth (guser, gpass):
-    gh = login( guser, gpass)
+def authToGit ():
+    gh = login( GITUSER, GITPASS)
     return gh
 
 def testauth(auth):
@@ -175,11 +180,11 @@ def _make_gist(contents, description='', filename='data.geojson'):
     contents
 
     """
-
     #ghapi = login(gituser, gitpass)
+    gh = login( GITUSER, GITPASS)
     files = {filename: {'content': contents}}
-    gist = create_gist(description, files)
-    print (gist.html_url)
+    gist = gh.create_gist(description, files)
+    #print (gist.html_url)
 
     return gist
 
