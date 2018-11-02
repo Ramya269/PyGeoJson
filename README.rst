@@ -27,14 +27,15 @@ use:
 
 .. code-block:: python
 
-    geojsonio.auth('YOUR-GIT-USERNAME', '<GITPASSWORD>')
+    myAuth = geojsonio.auth('YOUR-GIT-USERNAME', '<GITPASSWORD>')
 
-You can test the authentication with:
+You can test the authentication passing the authentication object to testauth:
 
 .. code-block:: python
 
-    geojsonio.testauth()
+    geojsonio.testauth(myAuth)
 
+It shall return: <AuthenticatedUser [yourusername: your name]>
 
 Send data to geojson.io and open a browser within python
 
