@@ -22,22 +22,8 @@ and import geojsonio
 Auth
 _____
 
-You need to auth to the GitApi in order to create gists:
-use:
-
-.. code-block:: python
-
-    myAuth = geojsonio.auth('YOUR-GIT-USERNAME', '<GITPASSWORD>')
-
-You can test the authentication passing the authentication object to testauth:
-
-.. code-block:: python
-
-    geojsonio.testauth(myAuth)
-
-It shall return: <AuthenticatedUser [yourusername: your name]>
-
-Send data to geojson.io and open a browser within python
+ Edit the __gitauth.txt__ file. In the first line put your github *username*, in the
+ second your password. It allows the gitHub3 to authenticate and create the gist.
 
 Usage
 _____
