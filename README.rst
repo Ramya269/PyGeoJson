@@ -8,7 +8,7 @@ geojsonio.py
 
 2. Go to the folder where geojsonio.py is
    
-   2.1 create a gitauth.txt file with user and password (theres an example in the fork)
+   2.1 create a gitauth.txt file with user and password (theres an example here)
 
    run: 
    ```
