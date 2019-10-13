@@ -5,7 +5,7 @@ geojsonio.py
 1. Clone this repo and go the folder.
 
 2. Install the requirements: 
-   ```pip install -r requirements.txr```
+   ``` pip install -r requirements.txt ```
    
 3. Create your access token:
 3.1 Go to https://github.com/settings/tokens
