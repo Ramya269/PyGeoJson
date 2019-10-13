@@ -48,7 +48,7 @@ def display(contents, domain=DEFAULT_DOMAIN, force_gist=True):
 
     """
     url = make_url(contents, domain, force_gist)
-    webbrowser.open(url)
+    webbrowser.open(url,  new = 2)
     return url
 # display() used to be called to_geojsonio. Keep it around for now...
 to_geojsonio = display
@@ -230,7 +230,7 @@ def main():
     if args.do_print:
         print(url)
     else:
-        webbrowser.open(url)
+        webbrowser.open(url,  new = 2)
 
 if __name__ == '__main__':
     main()
