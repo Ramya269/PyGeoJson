@@ -98,7 +98,7 @@ def data_url(contents, domain=DEFAULT_DOMAIN):
 
 def _make_gist(contents, description='', filename='data.geojson'):
 
-    gh = login( token=GITTOKEN )
+    gh = login( token=GIT_TOKEN )
     files = {filename: {'content': contents}}
     gist = gh.create_gist(description, files)
     #print (gist.html_url)
